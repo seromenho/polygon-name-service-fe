@@ -80,7 +80,7 @@ const App = () => {
             value: ethers.utils.parseEther(price),
           });
         } catch(error) {
-          alert("Insuficient funds");
+          alert(error.data?.message || 'Unknown error. Please contact support');
         }
         // Wait for t he transaction to be mined
         const receipt = await tx.wait();
@@ -225,10 +225,6 @@ const App = () => {
   // Render Methods
   const renderNotConnectedContainer = () => (
     <div className="connect-wallet-container">
-      <img
-        src="https://media.giphy.com/media/3ohhwytHcusSCXXOUg/giphy.gif"
-        alt="Ninja donut gif"
-      />
       {/* Call the connectWallet function we just wrote when the button is clicked */}
       <button
         onClick={connectWallet}
@@ -365,7 +361,7 @@ const App = () => {
         <input
           type="text"
           value={record}
-          placeholder="whats ur ninja power"
+          placeholder="whats ur power"
           onChange={(e) => setRecord(e.target.value)}
         />
 
