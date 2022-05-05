@@ -1,6 +1,6 @@
 # Working demo
 
-https://polygon-name-service-1nxawt5xg-seromenho.vercel.app
+https://polygon-name-service-fe.vercel.app/
 
 # buildspace DNS starter project
 
